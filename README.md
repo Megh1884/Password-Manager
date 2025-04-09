@@ -1,22 +1,30 @@
 # Secure Password Manager
 
-A secure password manager application with phone number verification and OTP-based authentication.
+A secure password manager application with master password authentication and a modern GUI.
 
 ## Features
 
-- User registration with phone number
-- OTP-based authentication
-- Secure password storage
-- Modern and attractive GUI
-- Easy password management
+- User registration with phone number and master password
+- Master password authentication for secure access
+- Store website credentials securely
+- Modern, attractive graphical user interface
+- Command-line interface option
+- Password hashing using SHA-256
+- SQLite database for local storage
+
+## Project Structure
+
+- **password_manager.py** - Command-line version of the password manager
+- **password_manager_gui.py** - Graphical user interface version
+- **requirements.txt** - Required dependencies
 
 ## Requirements
 
 - Python 3.7 or higher
 - Required Python packages (install using `pip install -r requirements.txt`):
+  - tkinter (included with Python)
   - customtkinter
   - pillow
-  - twilio (for OTP functionality)
 
 ## Installation
 
@@ -33,35 +41,50 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Run the application:
+### GUI Version
+
+1. Run the GUI application:
+```bash
+python password_manager_gui.py
+```
+
+2. Register with your phone number and create a master password
+3. Add passwords for different websites
+4. View your passwords by authenticating with your master password
+
+### Command-Line Version
+
+1. Run the command-line application:
 ```bash
 python password_manager.py
 ```
 
-2. Register with your phone number
-3. Login with your registered phone number
-4. You'll receive an OTP for verification
-5. After successful verification, you can:
+2. Follow the text-based menu to:
+   - Register a new user
    - Add new passwords
    - View your saved passwords
-   - Logout
+   - Exit the application
 
 ## Security Features
 
-- Phone number verification
-- OTP-based authentication
-- Secure password storage in SQLite database
+- Master password authentication
+- Password hashing with SHA-256
+- Secure local storage with SQLite
+- Database file excluded from Git repository
 - Passwords are masked in the interface
 
-## Note
+## Screenshots
 
-For OTP functionality to work, you'll need to:
-1. Sign up for a Twilio account
-2. Get your Account SID and Auth Token
-3. Update the Twilio credentials in the code
+(Add screenshots of your application here)
 
-Currently, the OTP is printed to the console for testing purposes. In a production environment, you would use Twilio to send actual SMS messages.
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## About
+
+This project was created as a cybersecurity demonstration for secure password management. It shows how to implement basic security features like password hashing and master password authentication. 
